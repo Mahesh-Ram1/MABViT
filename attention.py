@@ -322,7 +322,7 @@ class MultiHeadDotProductAttention(Module):
         use_bias=self.use_bias,
         precision=self.precision,
     )
-    
+    # when using gelu, Change features out_dim = head_dim. 
     dense1 = functools.partial(
         DenseGeneral,
         axis=-1,
